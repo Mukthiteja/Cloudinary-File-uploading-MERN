@@ -1,12 +1,26 @@
 import React from "react";
-import ImageList from "./components/ImageList";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import WebMaster from "./WebMaster/WebMaster";
+import Gallery from "./WebMaster/Gallery"
+import EditHome from "./WebMaster/EditHome"
+
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Image Uploader</h1>
-      <ImageList />
-    </div>
+    <Router>
+      <div className="app">
+        <main>
+          <Routes>
+            <Route path="/" element={<WebMaster />} />
+            <Route path="/Gallery" element={<Gallery />} />
+            <Route path="/EditHome" element={<EditHome />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 

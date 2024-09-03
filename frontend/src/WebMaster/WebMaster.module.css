@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically center the content */
+  min-height: 100vh; /* Ensure the container takes up at least the full height of the viewport */
+  text-align: center; /* Center text and other inline elements */
+}
+
+.title {
+  color: rgba(31, 53, 255, 1);
+  font: 400 36px Goldman, sans-serif;
+  margin-bottom: 30px; /* Adds some space below the title */
+}
+
+.gridContainer {
+  margin-top: 20px; /* Adjust spacing as needed */
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .gridContainer {
+    max-width: 100%;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Horizontally center the grid items */
+  gap: 20px;
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%; /* Adjust the width of each grid item */
+}
+
+@media (max-width: 991px) {
+  .gridItem {
+    width: 100%;
+  }
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 20px; /* Adjust padding as needed */
+  background: white; /* Consistent background color */
+  transition: transform 0.2s ease-in-out; /* Adds a hover effect */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.cardImage {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 60px; /* Adjust the size of the icon */
+  margin-bottom: 15px; /* Adds space below the icon */
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

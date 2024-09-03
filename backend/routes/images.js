@@ -15,7 +15,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "jatayu-kernel",
+    folder: "jatayu-kernel/Gallery",
     format: async (req, file) => "png",
     public_id: (req, file) => uuidv4(),
   },
@@ -25,6 +25,7 @@ const upload = multer({ storage: storage });
 
 // Upload Image
 router.post("/upload", upload.single("myfile"), async (req, res) => {
+  console.log("check");
   try {
     const newImage = new Image({
       Image_Url: req.file.path,
